@@ -15,6 +15,9 @@ target/
 .DS_Store
 Thumbs.db
 
+# Claude Code session state
+.claude/scheduled_tasks.lock
+
 # Gemini/Antigravity (Internal files)
 .gemini/
 .agents/
@@ -26,3 +29,6 @@ brain/
 task.md
 implementation_plan.md
 walkthrough.md
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
