@@ -4,14 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "node dist/index.js",
-    "build": "tsc",
-    "test": "vitest --run",
+    "dev": "node init && tsx watch src/index.ts",
+    "start": "node init && node dist/index.js",
+    "build": "node init && tsc",
+    "test": "vitest run",
     "seed": "tsx src/scripts/seed.ts",
     "db:setup": "npm run seed",
-    "db:reset": "npx tsx -e \"import('./src/db/schema.js').then(m => m.query('DROP TABLE IF EXISTS merchants, swap_history, bazaar_quotes, bazaar_intents, agent_history, x402_payments CASCADE'))\"",
-    "test": "vitest run"
+    "db:reset": "npx tsx -e \"import('./src/db/schema.js').then(m => m.query('DROP TABLE IF EXISTS merchants, swap_history, bazaar_quotes, bazaar_intents, agent_history, x402_payments CASCADE'))\""
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.86.1",
